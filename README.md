@@ -18,7 +18,7 @@ docker compose up --build
 
 | Service | URL |
 |---------|-----|
-| Frontend | [https://inventory-management-lac-seven.vercel.app/|
+| Frontend | https://inventory-management-lac-seven.vercel.app/|
 | API |https://inventory-management-1-f1k0.onrender.com/|
 | API Docs |https://inventory-management-1-f1k0.onrender.com/docs |
 
