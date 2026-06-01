@@ -1,4 +1,5 @@
 import api from './api';
+import { normalizePaginatedResponse } from '../utils/apiResponse';
 
 /**
  * @param {{ page?: number, size?: number }} params
@@ -6,7 +7,7 @@ import api from './api';
 export async function fetchOrders(params = {}) {
   const { page = 1, size = 10 } = params;
   const { data } = await api.get('/orders', { params: { page, size } });
-  return data;
+  return normalizePaginatedResponse(data);
 }
 
 /**

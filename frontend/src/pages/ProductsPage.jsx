@@ -72,7 +72,7 @@ export default function ProductsPage() {
     setError('');
     try {
       const data = await fetchProducts({ page: 1, size: 100 });
-      setAllProducts(data.items);
+      setAllProducts(Array.isArray(data?.items) ? data.items : []);
       setTotal(data.total);
     } catch (err) {
       setError(getErrorMessage(err));

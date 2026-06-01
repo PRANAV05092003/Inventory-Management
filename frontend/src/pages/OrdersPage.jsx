@@ -72,8 +72,8 @@ export default function OrdersPage() {
 
   const loadRefs = useCallback(async () => {
     const [c, p] = await Promise.all([fetchCustomers({ page: 1, size: 100 }), fetchProducts({ page: 1, size: 100 })]);
-    setCustomers(c.items);
-    setProducts(p.items);
+    setCustomers(Array.isArray(c?.items) ? c.items : []);
+    setProducts(Array.isArray(p?.items) ? p.items : []);
   }, []);
 
   const loadOrders = useCallback(async () => {
@@ -81,7 +81,7 @@ export default function OrdersPage() {
     setError('');
     try {
       const data = await fetchOrders({ page: page + 1, size: rowsPerPage });
-      setOrders(data.items);
+      setOrders(Array.isArray(data?.items) ? data.items : []);
       setTotal(data.total);
     } catch (err) {
       setError(getErrorMessage(err));

@@ -61,7 +61,7 @@ export default function CustomersPage() {
     setError('');
     try {
       const data = await fetchCustomers({ page: 1, size: 100 });
-      setCustomers(data.items);
+      setCustomers(Array.isArray(data?.items) ? data.items : []);
     } catch (err) {
       setError(getErrorMessage(err));
     } finally {

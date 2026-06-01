@@ -1,12 +1,14 @@
 import api from './api';
+import { normalizePaginatedResponse } from '../utils/apiResponse';
 
 /**
  * @param {{ page?: number, size?: number }} params
+ * @returns {Promise<{ items: object[], total: number, page: number, size: number }>}
  */
 export async function fetchProducts(params = {}) {
   const { page = 1, size = 10 } = params;
   const { data } = await api.get('/products', { params: { page, size } });
-  return data;
+  return normalizePaginatedResponse(data);
 }
 
 /**
