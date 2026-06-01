@@ -18,9 +18,9 @@ docker compose up --build
 
 | Service | URL |
 |---------|-----|
-| Frontend | http://localhost:3000 |
-| API | http://localhost:8000 |
-| API Docs | http://localhost:8000/docs |
+| Frontend | [https://inventory-management-lac-seven.vercel.app/|
+| API |https://inventory-management-1-f1k0.onrender.com/|
+| API Docs |https://inventory-management-1-f1k0.onrender.com/docs |
 
 ## Project Structure
 
